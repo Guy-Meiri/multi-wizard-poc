@@ -36,7 +36,7 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
     name: "",
     email: "",
   });
-  const onValidateForm1 = (form1State: Partial<FormState1>) => {
+  const setForm1 = (form1State: Partial<FormState1>) => {
     setForm1State((s) => ({ ...s, ...form1State }));
   };
   const isForm1Valid = !!(form1State.name && form1State.email);
@@ -47,19 +47,19 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
   });
   const isForm2Valid = !!form2State.phone && !!form2State.address;
 
-  const onValidateForm2 = (form2State: Partial<FormState2>) => {
+  const setForm2 = (form2State: Partial<FormState2>) => {
     setForm2State((s) => ({ ...s, ...form2State }));
   };
 
   const formState = {
     form1: {
       formState: form1State,
-      setFormState: onValidateForm1,
+      setFormState: setForm1,
       isValid: isForm1Valid,
     },
     form2: {
       formState: form2State,
-      setFormState: onValidateForm2,
+      setFormState: setForm2,
       isValid: isForm2Valid,
     },
   };

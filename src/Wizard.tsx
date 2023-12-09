@@ -1,7 +1,7 @@
 import React from "react";
 
 interface FormComponentAndData {
-  component: () => JSX.Element;
+  component: React.ReactNode;
   isValid: boolean;
 }
 interface Props {
@@ -25,7 +25,7 @@ export default function Wizard({ forms }: Props) {
   const { isValid } = forms[activeFormIndex];
   return (
     <div>
-      <div>{forms[activeFormIndex].component()}</div>
+      <div>{forms[activeFormIndex].component}</div>
       {<div>{isValid ? "v" : "x"}</div>}
       <button onClick={onPrev} disabled={activeFormIndex === 0}>
         Prev

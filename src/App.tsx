@@ -13,11 +13,11 @@ function App() {
     <Wizard
       forms={[
         {
-          component: () => <Form1 />,
+          component: <Form1 />,
           isValid: isForm1Valid,
         },
         {
-          component: () => <Form2 />,
+          component: <Form2 />,
           isValid: isForm2Valid,
         },
       ]}
